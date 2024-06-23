@@ -551,7 +551,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
@@ -9401,6 +9401,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   turnSpeed: 60
+  jumpVelocity: 4
+  jumpHeight: 1.5
   moveInputSource:
     m_UseReference: 1
     m_Action:
@@ -9427,6 +9429,19 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
+  jumpInputSource:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Jump Input Source
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 0ca8c851-339f-4945-80e9-4cc5a8706661
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 3712783231256301594, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
   rb: {fileID: 1479562477}
   bodyCollider: {fileID: 652995926}
   directionSource: {fileID: 1155980084}
@@ -9434,6 +9449,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 1
+  onlyMoveWhenGrounded: 0
 --- !u!1 &2072787932
 GameObject:
   m_ObjectHideFlags: 0

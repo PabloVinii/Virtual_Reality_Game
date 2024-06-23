@@ -5,35 +5,46 @@ public class ContinuosMovementPhysics : MonoBehaviour
 {
     [SerializeField] private float speed = 1f;
     [SerializeField] private float turnSpeed = 60f;
+    [SerializeField] private float jumpVelocity = 7f;
+    [SerializeField] private float jumpHeight = 1.5f;
+
     [SerializeField] private InputActionProperty moveInputSource;
     [SerializeField] private InputActionProperty turnInputSource;
+    [SerializeField] private InputActionProperty jumpInputSource;
+
     [SerializeField] private Rigidbody rb;
     [SerializeField] private CapsuleCollider bodyCollider;
     [SerializeField] private Transform directionSource;
     [SerializeField] private Transform turnSource;
+
     private Vector2 inputMoveAxis; 
-    private float inputTurnAxis; 
-
     public LayerMask groundLayer;
+    
+    private float inputTurnAxis; 
+    private bool isGrounded;
+    public bool onlyMoveWhenGrounded = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
         inputMoveAxis = moveInputSource.action.ReadValue<Vector2>();
         inputTurnAxis = turnInputSource.action.ReadValue<Vector2>().x;
+
+        bool jumpInput = jumpInputSource.action.WasPressedThisFrame();
+
+        if (jumpInput && isGrounded)
+        {
+            jumpVelocity = Mathf.Sqrt(2 * -Physics.gravity.y * jumpHeight);
+            rb.velocity = Vector3.up * jumpVelocity;
+        }
     }
 
 
     void FixedUpdate()
     {
-        bool isGrounded = CheckIfGround();
-        if (isGrounded)
+        isGrounded = CheckIfGround();
+        if (!onlyMoveWhenGrounded || (onlyMoveWhenGrounded && isGrounded))
         {
             Quaternion yaw = Quaternion.Euler(0, directionSource.eulerAngles.y, 0); 
             Vector3 direction = yaw * new Vector3(inputMoveAxis.x, 0, inputMoveAxis.y);
