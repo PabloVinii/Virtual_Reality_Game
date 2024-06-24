@@ -485,7 +485,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a0589cbf10e9f943991f1fa7ba61ad1, type: 3}
---- !u!1001 &4600243026656074525
+--- !u!1001 &1017392617398953983
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -493,76 +493,71 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3681184141669113427, guid: 2a0589cbf10e9f943991f1fa7ba61ad1,
-        type: 3}
-      propertyPath: m_Name
-      value: FA Superhawk
-      objectReference: {fileID: 0}
-    - target: {fileID: 4061650746155549929, guid: 2a0589cbf10e9f943991f1fa7ba61ad1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4061650746155549929, guid: 2a0589cbf10e9f943991f1fa7ba61ad1,
+    - target: {fileID: 703869892649959336, guid: 3d1cdd19e4600904d8780aa169b9ec36,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.1641
       objectReference: {fileID: 0}
-    - target: {fileID: 4061650746155549929, guid: 2a0589cbf10e9f943991f1fa7ba61ad1,
+    - target: {fileID: 703869892649959336, guid: 3d1cdd19e4600904d8780aa169b9ec36,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.0777
       objectReference: {fileID: 0}
-    - target: {fileID: 4061650746155549929, guid: 2a0589cbf10e9f943991f1fa7ba61ad1,
+    - target: {fileID: 703869892649959336, guid: 3d1cdd19e4600904d8780aa169b9ec36,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4061650746155549929, guid: 2a0589cbf10e9f943991f1fa7ba61ad1,
+    - target: {fileID: 703869892649959336, guid: 3d1cdd19e4600904d8780aa169b9ec36,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9999251
       objectReference: {fileID: 0}
-    - target: {fileID: 4061650746155549929, guid: 2a0589cbf10e9f943991f1fa7ba61ad1,
+    - target: {fileID: 703869892649959336, guid: 3d1cdd19e4600904d8780aa169b9ec36,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4061650746155549929, guid: 2a0589cbf10e9f943991f1fa7ba61ad1,
+    - target: {fileID: 703869892649959336, guid: 3d1cdd19e4600904d8780aa169b9ec36,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4061650746155549929, guid: 2a0589cbf10e9f943991f1fa7ba61ad1,
+    - target: {fileID: 703869892649959336, guid: 3d1cdd19e4600904d8780aa169b9ec36,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.01224271
       objectReference: {fileID: 0}
-    - target: {fileID: 4061650746155549929, guid: 2a0589cbf10e9f943991f1fa7ba61ad1,
+    - target: {fileID: 703869892649959336, guid: 3d1cdd19e4600904d8780aa169b9ec36,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4061650746155549929, guid: 2a0589cbf10e9f943991f1fa7ba61ad1,
+    - target: {fileID: 703869892649959336, guid: 3d1cdd19e4600904d8780aa169b9ec36,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4061650746155549929, guid: 2a0589cbf10e9f943991f1fa7ba61ad1,
+    - target: {fileID: 703869892649959336, guid: 3d1cdd19e4600904d8780aa169b9ec36,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -1.403
+      objectReference: {fileID: 0}
+    - target: {fileID: 1953103291360064941, guid: 3d1cdd19e4600904d8780aa169b9ec36,
+        type: 3}
+      propertyPath: m_Name
+      value: FA Superhawk
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2a0589cbf10e9f943991f1fa7ba61ad1, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: 3d1cdd19e4600904d8780aa169b9ec36, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 963194228}
   - {fileID: 705507995}
-  - {fileID: 4600243026656074525}
+  - {fileID: 1017392617398953983}
   - {fileID: 1719746288}
