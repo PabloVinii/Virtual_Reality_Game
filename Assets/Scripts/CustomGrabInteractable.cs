@@ -1,15 +1,11 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class CustomGrabInteractable : XRGrabInteractable
 {
-    private int avatarLayer; // A layer do avatar
-
-    protected override void Awake()
-    {
-        base.Awake();
-        avatarLayer = LayerMask.NameToLayer("Body");
-    }
+    [SerializeField]
+    private List<Collider> avatarCollidersToIgnore = new List<Collider>(); // Lista de colisores do avatar para ignorar
 
     protected override void OnEnable()
     {
@@ -27,21 +23,27 @@ public class CustomGrabInteractable : XRGrabInteractable
 
     private void OnGrab(SelectEnterEventArgs arg)
     {
-        // Ignora colisões com toda a layer "body" quando o objeto é agarrado
+        // Ignora colisão com os colisores especificados quando o objeto é agarrado
         Collider[] objectColliders = GetComponentsInChildren<Collider>();
-        foreach (var col in objectColliders)
+        foreach (var objectCollider in objectColliders)
         {
-            Physics.IgnoreLayerCollision(col.gameObject.layer, avatarLayer, true);
+            foreach (var avatarCollider in avatarCollidersToIgnore)
+            {
+                Physics.IgnoreCollision(objectCollider, avatarCollider, true);
+            }
         }
     }
 
     private void OnRelease(SelectExitEventArgs arg)
     {
-        // Reativa colisões com a layer "body" quando o objeto é solto
+        // Reativa colisão com os colisores especificados quando o objeto é solto
         Collider[] objectColliders = GetComponentsInChildren<Collider>();
-        foreach (var col in objectColliders)
+        foreach (var objectCollider in objectColliders)
         {
-            Physics.IgnoreLayerCollision(col.gameObject.layer, avatarLayer, false);
+            foreach (var avatarCollider in avatarCollidersToIgnore)
+            {
+                Physics.IgnoreCollision(objectCollider, avatarCollider, false);
+            }
         }
     }
 }
